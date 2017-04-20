@@ -16,12 +16,12 @@ source:
     - osx.memflush.patch  # [osx]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
   build:
-    - glib
+    - glib 2.51.*
     - libtool
     - pkg-config
     - toolchain
