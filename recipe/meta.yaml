@@ -21,10 +21,12 @@ build:
 
 requirements:
   build:
-    - glib 2.51.*
     - libtool
     - pkg-config
-    - toolchain
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - glib
 
 test:
   commands:
