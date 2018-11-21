@@ -14,6 +14,9 @@ source:
     # thanks to http://stackoverflow.com/questions/27004144/how-can-i-install-libmemcached-for-mac-os-x-yosemite-10-10-in-order-to-install-t
     - osx.configure.patch  # [osx]
     - osx.memflush.patch  # [osx]
+    # Taken from this bug report
+    # ref: https://bugs.launchpad.net/libmemcached/+bug/1663985
+    - libmemcached-build.patch  # [linux]
 
 build:
   number: 1002
