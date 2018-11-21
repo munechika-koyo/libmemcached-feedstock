@@ -2,8 +2,6 @@
 set -e
 set -x
 
-source activate "${CONDA_DEFAULT_ENV}"
-
 ./configure --prefix="$PREFIX"
 
 make

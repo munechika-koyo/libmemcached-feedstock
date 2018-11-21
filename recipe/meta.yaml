@@ -14,9 +14,12 @@ source:
     # thanks to http://stackoverflow.com/questions/27004144/how-can-i-install-libmemcached-for-mac-os-x-yosemite-10-10-in-order-to-install-t
     - osx.configure.patch  # [osx]
     - osx.memflush.patch  # [osx]
+    # Taken from this bug report
+    # ref: https://bugs.launchpad.net/libmemcached/+bug/1663985
+    - libmemcached-build.patch  # [linux]
 
 build:
-  number: 1
+  number: 1002
   skip: true  # [win]
 
 requirements:
@@ -30,13 +33,13 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libmemcached.a  # [linux]
-    - test -f $PREFIX/lib/libmemcached.dylib  # [osx]
-    - test -f $PREFIX/lib/libmemcached.la
+    - test -f $PREFIX/lib/libmemcached.a            # [unux]
+    - test -f $PREFIX/lib/libmemcached${SHLIB_EXT}  # [unix]
 
 about:
   home: http://libmemcached.org
   license: BSD-3-Clause
+  license_file: COPYING
   summary: libMemcached is an open source C/C++ client library and tools for the memcached server (http://danga.com/memcached). It has been designed to be light on memory usage, thread safe, and provide full access to server side methods.
 
 extra:
