@@ -30,8 +30,8 @@ requirements:
 
 test:
   commands:
-    - test -f $PREFIX/lib/libmemcached.a  # [linux]
-    - test -f $PREFIX/lib/libmemcached.dylib  # [osx]
+    - test -f $PREFIX/lib/libmemcached.a            # [unux]
+    - test -f $PREFIX/lib/libmemcached${SHLIB_EXT}  # [unix]
     - test -f $PREFIX/lib/libmemcached.la
 
 about:
