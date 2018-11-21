@@ -32,7 +32,6 @@ test:
   commands:
     - test -f $PREFIX/lib/libmemcached.a            # [unux]
     - test -f $PREFIX/lib/libmemcached${SHLIB_EXT}  # [unix]
-    - test -f $PREFIX/lib/libmemcached.la
 
 about:
   home: http://libmemcached.org
