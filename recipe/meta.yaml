@@ -36,6 +36,7 @@ test:
 about:
   home: http://libmemcached.org
   license: BSD-3-Clause
+  license_file: COPYING
   summary: libMemcached is an open source C/C++ client library and tools for the memcached server (http://danga.com/memcached). It has been designed to be light on memory usage, thread safe, and provide full access to server side methods.
 
 extra:
