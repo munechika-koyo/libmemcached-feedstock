@@ -19,7 +19,7 @@ source:
     - libmemcached-build.patch  # [linux]
 
 build:
-  number: 1002
+  number: 1003
   skip: true  # [win]
 
 requirements:
