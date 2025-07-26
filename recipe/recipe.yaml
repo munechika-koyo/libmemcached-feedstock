@@ -29,11 +29,14 @@ build:
 
 requirements:
   build:
-    - libtool
-    - pkg-config
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
+    - make
+    - if: unix
+      then:
+        - pkg-config
+        - libtool
   host:
     - glib
   run_exports:
@@ -41,14 +44,14 @@ requirements:
 
 tests:
   - script:
-    - if: unix
-      then:
-        - test -f ${PREFIX}/lib/libmemcached.a
-        - test -f ${PREFIX}/lib/libmemcached${SHLIB_EXT}
-    - if: win
-      then:
-        - if not exist %LIBRARY_LIB%\libmemcached.lib (exit 1)
-        - if not exist %LIBRARY_LIB%\libmemcached${SHLIB_EXT} (exit 1)
+      - if: unix
+        then:
+          - test -f ${PREFIX}/lib/libmemcached.a
+          - test -f ${PREFIX}/lib/libmemcached${SHLIB_EXT}
+      - if: win
+        then:
+          - if not exist %LIBRARY_LIB%\libmemcached.lib (exit 1)
+          - if not exist %LIBRARY_LIB%\libmemcached${SHLIB_EXT} (exit 1)
 
 about:
   homepage: http://libmemcached.org
