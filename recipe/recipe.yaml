@@ -37,6 +37,7 @@ requirements:
       then:
         - pkg-config
         - libtool
+        - gnuconfig
   host:
     - glib
   run_exports:
