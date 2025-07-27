@@ -38,6 +38,9 @@ requirements:
         - pkg-config
         - libtool
         - gnuconfig
+    - if: build_platform != target_platform
+      then:
+        - libuuid
   host:
     - glib
   run_exports:
