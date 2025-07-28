@@ -38,9 +38,9 @@ requirements:
         - pkg-config
         - libtool
         - gnuconfig
-    - if: build_platform != target_platform
+    - if: linux and (build_platform != target_platform)
       then:
-        - cdt("libuuid")
+        - ${{ cdt("libuuid") }}
   host:
     - glib
   run_exports:
