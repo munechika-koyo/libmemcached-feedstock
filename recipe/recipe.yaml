@@ -40,7 +40,7 @@ requirements:
         - gnuconfig
     - if: build_platform != target_platform
       then:
-        - libuuid
+        - cdt("libuuid")
   host:
     - glib
   run_exports:
