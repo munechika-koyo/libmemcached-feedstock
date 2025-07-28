@@ -40,8 +40,8 @@ requirements:
         - gnuconfig
   host:
     - glib
-    - if: linux and (build_platform != target_platform)
-      then: ${{ cdt("libuuid") }}
+    - if: linux
+      then: libuuid
   run_exports:
     - ${{ pin_subpackage("libmemcached", upper_bound="x.x.x") }}
 
