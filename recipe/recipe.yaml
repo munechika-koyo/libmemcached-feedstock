@@ -38,11 +38,10 @@ requirements:
         - pkg-config
         - libtool
         - gnuconfig
-    - if: linux and (build_platform != target_platform)
-      then:
-        - ${{ cdt("libuuid") }}
   host:
     - glib
+    - if: linux and (build_platform != target_platform)
+      then: ${{ cdt("libuuid") }}
   run_exports:
     - ${{ pin_subpackage("libmemcached", upper_bound="x.x.x") }}
 
