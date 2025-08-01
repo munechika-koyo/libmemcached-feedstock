@@ -25,7 +25,6 @@ source:
     # ref: https://github.com/conda-forge/libmemcached-feedstock/pull/12
     - if: linux and (build_platform != target_platform)
       then:
-        - fix-configure-uuid-cross-compile.patch
         - fix-uuid-cross-compile.patch
 
 build:
