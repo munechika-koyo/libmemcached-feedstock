@@ -5,12 +5,7 @@ set -x
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
 
-# Fix for cross-compilation
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" == "1" && "${build_platform}" == linux* ]]; then
-    autoreconf -fiv
-fi
-
-./configure --prefix=${PREFIX} --host=${HOST}
+./configure --prefix=${PREFIX}
 
 make -j${CPU_COUNT} ${VERBOSE_AT}
 ## tests hang on `testapp` on osx and linux
