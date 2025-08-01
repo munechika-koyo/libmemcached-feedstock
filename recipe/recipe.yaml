@@ -44,6 +44,10 @@ requirements:
         - pkg-config
         - libtool
         - gnuconfig
+    - if: linux and (build_platform != target_platform)
+      then:
+        - automake
+        - autoconf
   host:
     - glib
   run_exports:
