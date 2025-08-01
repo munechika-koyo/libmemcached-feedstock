@@ -21,6 +21,12 @@ source:
     - if: linux
       then:
         - libmemcached-build.patch
+    # Fixes for linux cross-compilation
+    # ref: https://github.com/conda-forge/libmemcached-feedstock/pull/12
+    - if: linux and (build_platform != target_platform)
+      then:
+        - fix-configure-uuid-cross-compile.patch
+        - fix-uuid-cross-compile.patch
 
 build:
   number: 1004
@@ -40,8 +46,6 @@ requirements:
         - gnuconfig
   host:
     - glib
-    - if: linux
-      then: libuuid
   run_exports:
     - ${{ pin_subpackage("libmemcached", upper_bound="x.x.x") }}
 
