@@ -6,7 +6,7 @@ set -x
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
 
 # Fix for cross-compilation
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" && "${build_platform}" == linux* ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" == "1" && "${build_platform}" == linux* ]]; then
     autoreconf -fiv
 fi
 
