@@ -49,7 +49,7 @@ requirements:
   host:
     - glib
   run_exports:
-    - ${{ pin_subpackage("libmemcached", upper_bound="x.x.x") }}
+    - ${{ pin_subpackage("libmemcached", upper_bound="x.x") }}
 
 tests:
   - package_contents:
