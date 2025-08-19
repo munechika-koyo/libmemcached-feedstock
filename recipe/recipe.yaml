@@ -1,6 +1,6 @@
 context:
   version: "1.0.18"
-  series: ${{ (version split("."))[:2] | join(".") }}
+  series: ${{ (version | split("."))[:2] | join(".") }}
 
 package:
   name: libmemcached
