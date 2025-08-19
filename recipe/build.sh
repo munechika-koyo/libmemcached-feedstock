@@ -11,6 +11,3 @@ make ${VERBOSE_AT}
 ## tests hang on `testapp` on osx and linux
 # make check
 make install
-
-# Exclude man pages and other miscellaneous.
-rm -rf "${PREFIX}/share"
