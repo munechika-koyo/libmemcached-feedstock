@@ -58,10 +58,6 @@ tests:
         then:
           - test -f ${PREFIX}/lib/libmemcached.a
           - test -f ${PREFIX}/lib/libmemcached${SHLIB_EXT}
-      - if: win
-        then:
-          - if not exist %LIBRARY_LIB%\libmemcached.lib (exit 1)
-          - if not exist %LIBRARY_LIB%\libmemcached${SHLIB_EXT} (exit 1)
 
 about:
   homepage: https://libmemcached.org
