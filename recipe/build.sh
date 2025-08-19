@@ -7,7 +7,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* ./build-aux
 
 ./configure --prefix=${PREFIX}
 
-make -j${CPU_COUNT} ${VERBOSE_AT}
+make ${VERBOSE_AT}
 ## tests hang on `testapp` on osx and linux
 # make check
 make install
