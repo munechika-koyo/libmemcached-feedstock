@@ -3,11 +3,13 @@ About libmemcached-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libmemcached-feedstock/blob/main/LICENSE.txt)
 
-Home: http://libmemcached.org/
+Home: https://libmemcached.org/
 
 Package license: BSD-3-Clause
 
-Summary: libMemcached is an open source C/C++ client library and tools for the memcached server (http://danga.com/memcached).
+Summary: libMemcached is an open source C/C++ client library and tools for the memcached server (https://danga.com/memcached).
+
+Development: https://code.launchpad.net/libmemcached
 
 It has been designed to be light on memory usage, thread safe, and provide full access to server side methods.
 
