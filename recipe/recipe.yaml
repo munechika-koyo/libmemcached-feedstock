@@ -64,7 +64,7 @@ tests:
           - if not exist %LIBRARY_LIB%\libmemcached${SHLIB_EXT} (exit 1)
 
 about:
-  homepage: http://libmemcached.org
+  homepage: https://libmemcached.org
   license: BSD-3-Clause
   license_file: COPYING
   summary: libMemcached is an open source C/C++ client library and tools for the memcached server (http://danga.com/memcached).
