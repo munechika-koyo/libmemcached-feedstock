@@ -53,11 +53,13 @@ requirements:
     - ${{ pin_subpackage("libmemcached", upper_bound="x.x.x") }}
 
 tests:
-  - script:
-      - if: unix
-        then:
-          - test -f ${PREFIX}/lib/libmemcached.a
-          - test -f ${PREFIX}/lib/libmemcached${SHLIB_EXT}
+  - package_contents:
+      files:
+        - if: unix
+          then:
+            - lib/libmemcached.a
+      lib:
+        - memcached
 
 about:
   homepage: https://libmemcached.org
